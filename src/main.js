@@ -10,14 +10,15 @@ import vueRouter from 'vue-router';
 Vue.use(vueRouter);
 
 // 3.0.2 导入路由规则对应的组件对象
-import login from './components/account/login.vue';
-import register from './components/account/register.vue';
+import home from './components/Home.vue';
+import shopcar from './components/shopcar/car.vue';
 
 // 3.0.2 定义路由规则
 var router1 = new vueRouter({
+	linkActiveClass:'mui-active',  //改变路由激活时的class名称
 	routes:[
-		{path:'/login',component:login}, 
-		{path:'/register',component:register}
+		{path:'/home',component:home}, 
+		{path:'/shopcar',component:shopcar}
 	]
 	});
 
