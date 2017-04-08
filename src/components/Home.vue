@@ -12,24 +12,36 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 	export default{
 		data(){
-			return {
-			list:[
-				    {
-				      "url": "http://www.itcast.cn/subject/phoneweb/index.html",
-				      "img": "http://8867345.s21i-8.faiusr.com/2/ABUIABACGAAg_dj2wwUowvbjywUwgAU4wAI!640x640.jpg"
-				    },
-				    {
-				      "url": "http://www.itcast.cn/subject/phoneweb/index.html",
-				      "img": "http://8867345.s21i-8.faiusr.com/2/ABUIABACGAAgmMv3wwUopMqcATCABTjAAg!640x640.jpg"
-				    },
-				    {
-				      "url": "http://www.itcast.cn/subject/phoneweb/index.html",
-				      "img": "http://8867345.s21i-8.faiusr.com/2/ABUIABACGAAgyr6AxAUo2IHXtQMwgAU4wAI!640x640.jpg"
-				    }
-				  ]
-				}
+		return {
+			list:[]
+			}
+		},
+		created(){
+			// 当页面中的data和methods对象都创建完毕以后，就会自动调用created
+			this.getimgs();
+		},
+		methods:{
+			getimgs(){
+				// 实现轮播组件中的数据请求
+				// 1.0 确定url
+				var url = 'http://webhm.top:8899/api/getlunbo';
+
+				// 2.0 调用$http.get()
+				this.$http.get(url).then(function(response){
+					var data = response.body;
+					//错误处理
+					if(data.status != 0){
+						Toast(data.message);
+						return;
+					}
+
+					// 如果服务器返回的数据正常则赋值给list
+					this.list = data.message;
+				});
+			}
 		}
 	}
 </script>

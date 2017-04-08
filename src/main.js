@@ -37,6 +37,11 @@ import '../statics/mui/css/mui.css';
 // 6.0 导入一个当前系统的全局基本样式
 import '../statics/css/site.css';
 
+// 7.0 将vue-resource在vue中绑定，自动在vue对象实例上注入一个$http对象就可以使用ajax方法了
+import vueResource from 'vue-resource';
+Vue.use(vueResource);
+
+
 // 5.0 利用Vue对象进行解析渲染
 new Vue({
 	el:'#app',
