@@ -33,6 +33,9 @@ Vue.use(mintui);
 // 5.0 注册mui的css样式
 import '../statics/mui/css/mui.css';
 
+// 6.0 导入一个当前系统的全局基本样式
+import '../statics/css/site.css';
+
 // 5.0 利用Vue对象进行解析渲染
 new Vue({
 	el:'#app',
