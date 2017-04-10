@@ -1,18 +1,27 @@
 <template>
 	<div id="tmpl">
+        <!--1.0 实现新闻详情-->
 	   <div class="title">
 		   <h4 v-text="info.title"></h4>
 		   <p>{{ info.add_time | datefmt('YYYY-MM-DD') }}  {{info.click}}次浏览</p>
 	   </div>
-		<div id="content" v-html="info.content" >
+		<div id="content" v-html="info.content" ></div>
 
-		</div>
+        <!--2.0 实现评论组件的集成-->
+        <!--10.2 实现评论组件-->
+        <comment :id = "id"></comment>
 	</div>
 </template>
 
 <script>
     import common from '../../kits/common.js';
+//    10.0 导入评论组件 comment.vue
+    import comment from '../subcom/comment.vue';
+
 	export default{
+        components:{
+            comment  // 10.1 注册评论组件
+        },
         data(){
             return {
                 id: 0,  // 传入的id值
