@@ -23,6 +23,7 @@
 
 <script>
 import { Toast } from 'mint-ui';
+import common from '../../kits/common.js';
 
 	export default{
 		data(){
@@ -37,7 +38,7 @@ import { Toast } from 'mint-ui';
 		// 获取api中的新闻资讯数据
 		getnewslist(){
 			// 1.0 确定url
-			var url = 'http://webhm.top:8899/api/getnewslist';
+			var url = common.apidomain+'/api/getnewslist';
 
 			// 2.0 利用$http.get方法请求到数据
 			this.$http.get(url).then(function(res){
