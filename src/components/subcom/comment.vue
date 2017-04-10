@@ -24,6 +24,9 @@
 				</ul>
 			</div>
 		</div>
+
+		<!--3.0 实现获取更多按钮-->
+		<mt-button type="danger" size="large" plain @click="getmore">加载更多</mt-button>
 	</div>
 </template>
 
@@ -34,6 +37,7 @@
 	export default{
 		data(){
 			return {
+				pageindex:1 , //代表获取api中的第几页评论数据
 				postcontent : '',  //用来自动获取用户填写的评论内容
 				list:[]  //评论数据的数组
 			}
@@ -41,12 +45,22 @@
 		props:['id'], //作用是用来接收父组件传入过来的id值
 		created(){
 //			1.0 获取当前资讯数据的评论信息列表
-			this.getcommentlist(1);
+			this.getcommentlist(this.pageindex);
 		},
 		methods:{
+//			3.0 实现加载更多的方法
+			getmore(){
+//				1.0 实现this.pageindex值的增加1
+				this.pageindex++;
+				console.log(this.pageindex);
+
+//				2.0 获取当前this.pageindex值对应的分页数据
+				this.getcommentlist(this.pageindex);
+
+			},
 //			2.0 获取当前数据的评论数据 pageindex:代表的是当前获取的是哪一页的数据，默认值是1
 			getcommentlist(pageindex){
-				pageindex = pageindex | 1;
+				pageindex = pageindex || 1;
 //				1.0 确定评论数据的url
 				var url  = common.apidomain + '/api/getcomments/'+this.id+'?pageindex='+pageindex;
 //				2.0 发出ajax请求获取数据即可
@@ -56,7 +70,7 @@
 						return;
 					}
 //3.0 				将message数组中的数据赋值给this.list
-					this.list = res.body.message;
+					this.list = this.list.concat(res.body.message);
 				});
 			},
 //			1.0 评论数据的提交
