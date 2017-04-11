@@ -15,38 +15,9 @@
 			<div class="mui-content">
 				<ul class="mui-table-view mui-grid-view mui-grid-9">
 					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<router-link to="/news/newslist">
-							<span class="mui-icon mui-icon-home"></span>
-							<div class="mui-media-body">新闻资讯</div></router-link>
+						<img class="preview-img"  v-for="(item, index) in list" :src="item.src" height="100" @click="$preview.open(index, list)"
+								 >
 					</li>
-
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<router-link to="/photo/photolist">
-		                    <span class="mui-icon mui-icon-email">
-
-		                    </span>
-							<div class="mui-media-body">图片分享</div></router-link>
-					</li>
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/goods/goodslist">
-						<span class="mui-icon mui-icon-chatbubble"></span>
-						<div class="mui-media-body">商品购买</div></router-link>
-
-					</li>
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/feedback">
-						<span class="mui-icon mui-icon-location"></span>
-						<div class="mui-media-body">留言反馈</div></router-link>
-
-					</li>
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/vide">
-						<span class="mui-icon mui-icon-search"></span>
-						<div class="mui-media-body">视频专区</div></router-link>
-
-					</li>
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/callme">
-						<span class="mui-icon mui-icon-phone"></span>
-						<div class="mui-media-body">联系我们</div></router-link>
-					</li>
-
 				</ul>
 			</div>
 
@@ -79,7 +50,18 @@
 //					"click": 0,
 //					"add_time": "2015-04-18T06:27:06.000Z",
 //					"content": "北京四季酒店,柳岩出席设计师好友兰玉的高级成衣发布Show,她身穿兰玉设计的纯白卡肩礼服惊艳登场,优雅晚装发髻搭配翡翠镶钻珠宝,举手投足尽显大气温婉,而卡肩低胸的礼服设计更是衬托出柳岩傲人的事业线资本,性感指数爆灯,入场即引来现场阵阵骚动,柳岩轻松看秀全程甜笑连连,心情靓绝。"
-				}  //图片的详情描述数据对象
+				},  //图片的详情描述数据对象
+				list :[
+					{
+						src: 'https://placekitten.com/600/400',
+						w: 600,
+						h: 400
+					}, {
+						src: 'https://placekitten.com/1200/900',
+						w: 1200,
+						h: 900
+					}
+				]
 			}
 		},
 		created(){
@@ -141,4 +123,10 @@
 	  border-top:0px;
 	  border-left:0px;
   }
+
+  /* 9宫格缩略图的样式*/
+	.mui-content img{
+		width: 100px;
+		height: 100px;
+	}
 </style>

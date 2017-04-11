@@ -22,7 +22,7 @@ module.exports={
       }
       ,
        {
-        test: /\.(png|jpg|gif|ttf)$/,  //打包 url请求的资源文件
+        test: /\.(png|jpg|gif|ttf|svg)$/,  //打包 url请求的资源文件
         loader:'url-loader?limit=20000' //limit表示图片的大小为20K是临界值，小于20K的图片均被打包到build.js中去，请求图片就会很快
       },
        {
@@ -33,7 +33,11 @@ module.exports={
        {
         test: /.vue$/,  // 解析 .vue 组件页面文件
         loader:'vue-loader' //
-      }
+      },
+        {
+            test: /vue-preview.src.*?js$/,  // vue-preivew组件专用
+            loader: 'babel'
+        }
   	]
   },
   babel:{

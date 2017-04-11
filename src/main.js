@@ -59,6 +59,10 @@ Vue.filter('datefmt',function(input,fmtstring){
 	return moment(input).format(fmtstring);
 });
 
+// 9.0 使用图片预览组件
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview);
+
 // 5.0 利用Vue对象进行解析渲染
 new Vue({
 	el:'#app',
