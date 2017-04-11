@@ -86,7 +86,15 @@
 //				2.0.1 获取到用户在文本框中填写的评论内容，通过 content: 内容 格式提交到请求报文体中
 				this.$http.post(url,{content:this.postcontent},{emulateJSON:true}).then(function(res){
 					Toast(res.body.message);
-					//	3.0 将文本框中的评论内容清空
+
+//					3.0 将最新的评论数据追加到评论列表的最顶部
+				this.list = [{
+						"user_name": "匿名用户",
+						"add_time": new Date(),
+						"content": this.postcontent
+					}].concat(this.list);
+
+					//	4.0 将文本框中的评论内容清空
 					this.postcontent = '';
 				});
 			}

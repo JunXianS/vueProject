@@ -20,6 +20,7 @@ import newsinfo from './components/news/newsinfo.vue';
 var router1 = new vueRouter({
 	linkActiveClass:'mui-active',  //改变路由激活时的class名称
 	routes:[
+		{path:'/',redirect:'/home'},// 设置当服务器启动的时候默认进入 /home中
 		{path:'/home',component:home},   //首页
 		{path:'/shopcar',component:shopcar},  // 购物车
 		{path:'/news/newslist',component:newslist}, //新闻资讯列表页面
