@@ -14,8 +14,8 @@
 			<!--缩略图-->
 			<div class="mui-content">
 				<ul class="mui-table-view mui-grid-view mui-grid-9">
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-						<img class="preview-img"  v-for="(item, index) in list" :src="item.src" height="100" @click="$preview.open(index, list)"
+					<li  v-for="(item, index) in list" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						<img class="preview-img"  :src="item.src" height="100" @click="$preview.open(index, list)"
 								 >
 					</li>
 				</ul>
@@ -52,16 +52,16 @@
 //					"content": "北京四季酒店,柳岩出席设计师好友兰玉的高级成衣发布Show,她身穿兰玉设计的纯白卡肩礼服惊艳登场,优雅晚装发髻搭配翡翠镶钻珠宝,举手投足尽显大气温婉,而卡肩低胸的礼服设计更是衬托出柳岩傲人的事业线资本,性感指数爆灯,入场即引来现场阵阵骚动,柳岩轻松看秀全程甜笑连连,心情靓绝。"
 				},  //图片的详情描述数据对象
 				list :[
-					{
-						src: 'https://placekitten.com/600/400',
-						w: 600,
-						h: 400
-					}, {
-						src: 'https://placekitten.com/1200/900',
-						w: 1200,
-						h: 900
-					}
-				]
+//					{
+//						src: 'https://placekitten.com/600/400',
+//						w: 600,
+//						h: 400
+//					}, {
+//						src: 'https://placekitten.com/1200/900',
+//						w: 1200,
+//						h: 900
+//					}
+				]  // 负责存储缩略图的数据
 			}
 		},
 		created(){
@@ -69,8 +69,34 @@
 
 //			ajax请求图片的详情数据
 			this.getinfo();
+
+//			调用
+			this.getimgs();
 		},
 		methods:{
+//			2.0 获取缩略图数据
+			getimgs(){
+				var url = common.apidomain + '/api/getthumimages/'+this.id;
+				this.$http.get(url).then(function(res){
+					var body = res.body;
+					if(body.status != 0 ){
+						Toast(body.message);
+						return;
+					}
+
+//					将正常的逻辑数据赋值给this.list数组
+//					由于vue-preview组件要求的数据是 {src:,w:,h:}但是服务器响应回来的数据中是没有 w ,h 的，所以只能自己添加了
+					body.message.forEach(function(item){
+//						当前所有图片不管有多大都设置为宽高为400，就会导致图片失真了，所以应该按照图片的实际尺寸来设置
+						var img = document.createElement('img');
+						img.src = item.src;
+						item.h = img.height;
+						item.w = img.width;
+					});
+					this.list = body.message;
+				});
+
+			},
 //			1.0  获取图片想起描述数据
 			getinfo(){
 				var url =common.apidomain +'/api/getimageInfo/'+this.id;
