@@ -14,6 +14,7 @@ import home from './components/Home.vue';
 import shopcar from './components/shopcar/car.vue';
 import newslist from './components/news/newslist.vue';
 import newsinfo from './components/news/newsinfo.vue';
+import photolist from './components/photo/photolist.vue';
 
 
 // 3.0.2 定义路由规则
@@ -24,7 +25,9 @@ var router1 = new vueRouter({
 		{path:'/home',component:home},   //首页
 		{path:'/shopcar',component:shopcar},  // 购物车
 		{path:'/news/newslist',component:newslist}, //新闻资讯列表页面
-		{path:'/news/newsinfo/:id',component:newsinfo}  // 新闻资讯详情页面
+		{path:'/news/newsinfo/:id',component:newsinfo},  // 新闻资讯详情页面
+		{path:'/photo/photolist',component:photolist},
+
 	]
 	});
 
