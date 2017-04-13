@@ -1,13 +1,14 @@
 <template>
 	<div id="tmpl">
 	 <!-- 1.0 轮播图：mint-ui中的 swipe组件实现 -->
-		 <mt-swipe :auto="2000">
-		  <!-- <mt-swipe-item>1</mt-swipe-item>
-		   -->
-		   <mt-swipe-item v-for="item in list">
-		   	<img :src="item.img">
-		   </mt-swipe-item>
-		</mt-swipe>
+		 <!--<mt-swipe :auto="2000">-->
+		  <!--&lt;!&ndash; <mt-swipe-item>1</mt-swipe-item>-->
+		   <!--&ndash;&gt;-->
+		   <!--<mt-swipe-item v-for="item in list">-->
+		   	<!--<img :src="item.img">-->
+		   <!--</mt-swipe-item>-->
+		<!--</mt-swipe>-->
+		<silder :imgs="list"></silder>
 
 		<!-- 2.0 利用MUI的9宫格样式实现导航区域 -->
 		<div class="mui-content">
@@ -25,7 +26,8 @@
 		                    </span>
 		                    <div class="mui-media-body">图片分享</div></router-link>
 		             </li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/goods/goodslist">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+						<router-link to="/goods/goodslist">
 		                    <span class="mui-icon mui-icon-chatbubble"></span>
 		                    <div class="mui-media-body">商品购买</div></router-link>
 
@@ -54,8 +56,12 @@
 <script>
 import { Toast } from 'mint-ui';
 import common from '../kits/common.js';
+import silder from './subcom/silder.vue';
 
 	export default{
+		components:{
+			silder
+		},
 		data(){
 		return {
 			list:[]
@@ -70,7 +76,7 @@ import common from '../kits/common.js';
 				// 实现轮播组件中的数据请求
 				// 1.0 确定url
 				var url = common.apidomain + '/api/getlunbo';
-
+				console.log(url);
 				// 2.0 调用$http.get()
 				this.$http.get(url).then(function(response){
 					var data = response.body;
@@ -89,17 +95,7 @@ import common from '../kits/common.js';
 </script>
 
 <style scoped>
-	.mint-swipe{
-		height: 300px;
-	}
-	.mint-swipe-item img{
-		width: 100%;
-	}
-	.mint-swipe-item{
-		background-color: red;
-		width: 100%;
-		height: 300px;
-	}
+
 	
 	.mui-content,.mui-content ul{
 		background-color: #fff;

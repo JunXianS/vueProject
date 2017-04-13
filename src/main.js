@@ -16,7 +16,9 @@ import newslist from './components/news/newslist.vue';
 import newsinfo from './components/news/newsinfo.vue';
 import photolist from './components/photo/photolist.vue';
 import photoinfo from './components/photo/photoinfo.vue';
-
+import goodslist from './components/goods/goodslist.vue';
+import goodsinfo from './components/goods/goodsinfo.vue';
+import goodsdesc from './components/goods/goodsdesc.vue';
 
 // 3.0.2 定义路由规则
 var router1 = new vueRouter({
@@ -29,6 +31,9 @@ var router1 = new vueRouter({
 		{path:'/news/newsinfo/:id',component:newsinfo},  // 新闻资讯详情页面
 		{path:'/photo/photolist',component:photolist},
 		{path:'/photo/photoinfo/:id',component:photoinfo},
+		{path:'/goods/goodslist',component:goodslist},
+		{path:'/goods/goodsinfo/:id',component:goodsinfo},
+		{path:'/goods/goodsdesc/:id',component:goodsdesc}
 
 	]
 	});
