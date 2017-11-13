@@ -26,26 +26,48 @@ vue ，vuex ， vue-router ，webpack ， ES6 ，mui ， sass ， flex
 # 项目梗概目录说明（内部说明略）
 
 ├── build                                       // webpack配置文件
+
 ├── config                                      // 项目打包路径
+
 ├── dist                                        // 源利用webpack发布后的文件存储目录
+
 ├── src                                         // 源码目录
+
 │   ├── Home.vue                                // 系统首页
-│   ├── App.vue                                 // 系统首页
+
+│   ├── App.vue                                 // 系统根组件
+
 │   ├── main.js                                 // webpack打包的入口文件
+
 │   ├── components                              //vue组件页面存放区（功能分类存放区）
-│   │   ├── goods                              
+
+│   │   ├── goods      
+
 │   │   ├── news
+
 │   │   ├── photo
-│   │   ├── shopcar                              
-│   │   ├── subcom                            
+
+│   │   ├── shopcar      
+
+│   │   ├── subcom       
+
 │   ├── kits                                      //存放公共方法的文件夹
+
 ├── statics                                       // 项目静态资源文件存放
-│   ├── css                             
-│   ├── imgs                              
-│   ├── mui                              
+
+│   ├── css       
+
+│   ├── imgs   
+
+│   ├── mui   
+
 ├── index.html                                    // 入口html文件
+
 ├── package.json                                  // nodejs包管理文件
+
 ├── README.md                                     // 项目说明文件
+
 ├── .gitignore                                    // git忽略文件
+
 .
 
