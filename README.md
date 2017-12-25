@@ -36,8 +36,8 @@ bug解决：在switch状态相互影响的问题<br/>
 ------ goods <br/>
 ------ news <br/>
 ------ photo <br/>
------- shopcar   <br/>    
------- subcom  <br/>     
+------ shopcar<br/>    
+------ subcom<br/>     
 -- -- kits //存放公共方法的文件夹<br/>
 ---- statics // 项目静态资源文件存放<br/>
 ------ css <br/>
