@@ -2,7 +2,7 @@
 <template>
 	<div>
 		<!-- 1.0 利用mint-ui中的header组件实现整个系统的头部 -->
-		<mt-header fixed title="传智播客.黑马程序员Vue商城系统"></mt-header>
+		<mt-header fixed title="Vue商城系统"></mt-header>
 
 		<!-- 2.0 利用vue-router的 <router-view>进行占位 -->
 		<router-view></router-view>
