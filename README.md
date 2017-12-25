@@ -22,51 +22,28 @@ vue-评论组件：<br/>
 2, 点击购物车按钮后出现小球动画飞入提醒：<br/>
 3.....
 bug解决：在switch状态相互影响的问题<br/>
-.....
+.....<br/>
 
-#### 项目梗概目录说明（内部说明略）
-.
---build                                       // webpack配置文件
-
--- config                                     // 项目打包路径
-
--- dist                                       // 源利用webpack发布后的文件存储目录
-
--- src                                        // 源码目录
-
----- Home.vue                                // 系统首页
-
----- App.vue                                 // 系统根组件
-
----- main.js                                 // webpack打包的入口文件
-
----- components                             //vue组件页面存放区（功能分类存放区）
-
------- goods      
-
------- news  
-
------- photo 
-
------- shopcar       
-
------- subcom       
-
--- -- kits                                      //存放公共方法的文件夹
-
----- statics                                       // 项目静态资源文件存放
-
------- css       
-
----- -- imgs   
-
----- -- mui   
-
----- index.html                                    // 入口html文件
-
----- package.json                                  // nodejs包管理文件
-
----- README.md                                     // 项目说明文件
-
----- .gitignore                                    // git忽略文件
-.
+#### 项目梗概目录说明（内部说明略）<br/>
+--build  // webpack配置文件<br/>
+-- config // 项目打包路径<br/>
+-- dist // 源利用webpack发布后的文件存储目录<br/>
+-- src // 源码目录<br/>
+---- Home.vue // 系统首页<br/>
+---- App.vue // 系统根组件<br/>
+---- main.js // webpack打包的入口文件<br/>
+---- components //vue组件页面存放区（功能分类存放区）<br/>
+------ goods <br/>
+------ news <br/>
+------ photo <br/>
+------ shopcar   <br/>    
+------ subcom  <br/>     
+-- -- kits //存放公共方法的文件夹<br/>
+---- statics // 项目静态资源文件存放<br/>
+------ css <br/>
+---- -- imgs <br/>
+---- -- mui <br/>
+---- index.html // 入口html文件<br/>
+---- package.json // nodejs包管理文件<br/>
+---- README.md // 项目说明文件<br/>
+---- .gitignore // git忽略文件<br/>
