@@ -1,13 +1,10 @@
 vue构建的单页面应用-移动端开发<br/>
 包括购物车，项目涉及到对money的逻辑计算， ES6 新属性等等，<br/>
-
 #### 项目运行：
 cnpm install<br/>
 npm run dev启动项目<br/>
-
 #### 技术栈：
 vue ，vuex ， vue-router ，webpack ， ES6 ，mui ， sass ， flex <br/>
-
 #### 小部分说明：
 prop 事件传递<br/>
 父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。<br/>
@@ -35,10 +32,10 @@ bug解决：在switch状态相互影响的问题<br/>
 ------ goods <br/>
 ------ news <br/>
 ------ photo <br/>
------- shopcar<br/>    
------- subcom<br/>     
--- -- kits //存放公共方法的文件夹<br/>
----- statics // 项目静态资源文件存放<br/>
+------ shopcar<br/>
+------ subcom<br/>
+-- -- kits//存放公共方法的文件夹<br/>
+---- statics// 项目静态资源文件存放<br/>
 ------ css <br/>
 ---- -- imgs <br/>
 ---- -- mui <br/>
