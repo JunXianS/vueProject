@@ -12,7 +12,9 @@ npm run dev启动项目<br/>
 vue ，vuex ， vue-router ，webpack ， ES6 ，mui ， sass ， flex <br/>
 
 #### 小部分说明：
-
+prop 事件传递<br/>
+父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。<br/>
+![image](https://raw.githubusercontent.com/wiki/Amyidol/vueProject/prop.png)
 1,日期格式化的实现方案分析(使用全局过滤器和momentjs实现<br/>
 2，实现思路分析和参数传递获取，api文档中的参数传递：<br/>
 3,页面功能代码实现<br/>
@@ -24,7 +26,7 @@ vue-评论组件：<br/>
 bug解决：在switch状态相互影响的问题<br/>
 .....<br/>
 
-#### 项目梗概目录说明（内部说明略）<br/>
+#### 梗概目录说明<br/>
 --build  // webpack配置文件<br/>
 -- config // 项目打包路径<br/>
 -- dist // 源利用webpack发布后的文件存储目录<br/>
