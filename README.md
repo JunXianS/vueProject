@@ -1,8 +1,5 @@
-### vueProject
-
 vue构建的单页面应用-移动端开发<br/>
-包括购物车的项目，项目涉及到对money的逻辑计算。<br/>
-涉及 ES6 等新属性，<br/>
+包括购物车，项目涉及到对money的逻辑计算， ES6 新属性等等，<br/>
 
 #### 项目运行：
 cnpm install<br/>
@@ -14,7 +11,7 @@ vue ，vuex ， vue-router ，webpack ， ES6 ，mui ， sass ， flex <br/>
 #### 小部分说明：
 prop 事件传递<br/>
 父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。<br/>
-![image](https://raw.githubusercontent.com/wiki/Amyidol/vueProject/prop.png)
+![image](https://raw.githubusercontent.com/wiki/Amyidol/vueProject/prop.png) <br/>
 1,日期格式化的实现方案分析(使用全局过滤器和momentjs实现<br/>
 2，实现思路分析和参数传递获取，api文档中的参数传递：<br/>
 3,页面功能代码实现<br/>
